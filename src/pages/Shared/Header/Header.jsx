@@ -1,12 +1,17 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png'
 import moment from 'moment';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../provider/AuthProvider';
 
 const Header = () => {
+
+    const {user} = useContext(AuthContext)
+    console.log(user);
+
     return (
         <Container className='mt-3'>
             <div className="text-center">
@@ -33,7 +38,7 @@ const Header = () => {
                             <Nav.Link href="#pricing">Career</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">Profile</Nav.Link>
+                            <Nav.Link href="#deets">{user.displayName}</Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
                                 <Button variant="dark">Login</Button>
                             </Nav.Link>
