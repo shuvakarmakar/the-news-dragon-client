@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { createContext } from 'react';
 import { getAuth } from "firebase/auth";
 import app from '../firebase/firebase.config';
@@ -8,7 +9,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
 
-    const user = {displayName: 'Shuva karmakar'}
+    const user = null;
 
     const authInfo ={
         user,
